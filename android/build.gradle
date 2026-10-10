@@ -1,0 +1,31 @@
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+subprojects {
+    if (project.name == "on_audio_query_android") {
+        project.plugins.withId("com.android.library") {
+            project.android {
+                namespace "com.lucasjosino.on_audio_query"
+            }
+        }
+    }
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

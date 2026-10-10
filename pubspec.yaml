@@ -1,0 +1,27 @@
+
+name: srs_music_player
+description: مشغل موسيقى محلي بتصميم كلاسيكي
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.6.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  just_audio: ^0.10.6
+  audio_service: ^0.18.19
+  on_audio_query: ^2.9.0
+  file_picker: ^10.3.3
+  shared_preferences: ^2.5.3
+  rxdart: ^0.28.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
